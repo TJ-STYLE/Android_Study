@@ -1,19 +1,33 @@
 package com.example.junghyeongim.android_study;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * main activity
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+    TextView textview;
+    Button btnTrans, btnBrowser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        textview = (TextView) findViewById(R.id.main_textView);
+        btnTrans = (Button) findViewById(R.id.main_button);
+        btnBrowser = (Button) findViewById(R.id.main_button_browser);
+
+        btnTrans.setOnClickListener(this);
+        btnBrowser.setOnClickListener(this);
     }
 
     @Override
@@ -36,5 +50,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()) {
+            case R.id.main_button:
+                textview.setText("환영합니다!");
+                break;
+            case R.id.main_button_browser:
+                startActivity(new Intent(this, WebViewActivity.class));
+                break;
+        }
     }
 }
