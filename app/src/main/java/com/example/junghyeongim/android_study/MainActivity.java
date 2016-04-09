@@ -7,6 +7,7 @@ import android.view.MenuItem;
 
 /**
  * main activity
+ * master branch
  */
 public class MainActivity extends AppCompatActivity {
 
