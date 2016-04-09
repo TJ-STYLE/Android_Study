@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextView textview;
-    Button btnTrans, btnBrowser;
+    Button btnTrans, btnBrowser, btnMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +26,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textview = (TextView) findViewById(R.id.main_textView);
         btnTrans = (Button) findViewById(R.id.main_button);
         btnBrowser = (Button) findViewById(R.id.main_button_browser);
+        btnMap = (Button) findViewById(R.id.main_button_map);
 
         btnTrans.setOnClickListener(this);
         btnBrowser.setOnClickListener(this);
+        btnMap.setOnClickListener(this);
     }
 
     @Override
@@ -61,6 +63,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.main_button_browser:
                 startActivity(new Intent(this, WebViewActivity.class));
+                break;
+            case R.id.main_button_map:
+                startActivity(new Intent(this, MapActivity.class));
                 break;
         }
     }
