@@ -12,6 +12,7 @@ import android.widget.TextView;
 /**
  * main activity
  * master branch
+ * test
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
